@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя стильная страница</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            background-color: #121212;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            width: 90%;
+            max-width: 400px;
+            aspect-ratio: 3 / 4;
+            background: url('image.jpg') no-repeat center;
+            background-size: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .text-box {
+            margin-top: 15px;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .text-box input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Добро пожаловать!</h1>
+
+    <div class="image-container"></div>
+
+    <div class="text-box">
+        <p type="text">Lol Rer</p>
+    </div>
+
+    <audio id="bg-music" autoplay loop>
+        <source src="music.mp3" type="audio/mp3">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+
+    <script>
+        document.addEventListener('click', function() {
+            let audio = document.getElementById('bg-music');
+            if (audio.paused) {
+                audio.play().catch(e => console.log("Автовоспроизведение заблокировано"));
+            }
+        });
+    </script>
+
+</body>
+</html>
